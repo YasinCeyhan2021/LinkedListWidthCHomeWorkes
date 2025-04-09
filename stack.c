@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<locale.h>
 #define MAX_SIZE 100
 
 int stack[MAX_SIZE];
@@ -50,7 +51,8 @@ void display(){
         printf("Stack boþ!\n");
     } else {
         printf("Stack: ");
-        for(int i = top; i >= 0; i--){
+        int i;
+        for(i = top; i >= 0; i--){
             printf("%d ", stack[i]);
         }
         printf("\n");
@@ -58,6 +60,7 @@ void display(){
 }
 
 int main(){
+	setlocale(LC_ALL, "Turkish"); 
     int islem, veri;
     printf("1 - Push\n2 - Pop\n3 - Peek\n4 - Göster\n0 - Çýk\n");
 

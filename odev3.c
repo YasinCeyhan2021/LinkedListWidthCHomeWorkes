@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include<locale.h>
 
 typedef struct Node {
     int data;
@@ -66,6 +67,7 @@ node *function3(node *head, int sil) {
 }
 
 int main() {
+	setlocale(LC_ALL, "Turkish"); 
     node *Head3 = NULL;
     Head3 = end_add_node(Head3, 1);
     Head3 = end_add_node(Head3, 3);

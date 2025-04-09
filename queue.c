@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<locale.h>
 #define max_size 10
 
 int queue[max_size];
@@ -24,8 +25,9 @@ int is_empty(){
 void show(){
     if(is_empty())
         return;
-
-    for(int i = front; i <= rear; i++){
+	
+	int i;
+    for(i = front; i <= rear; i++){
         printf("%d", queue[i]);
         if(i != rear)
             printf("-");
@@ -52,6 +54,7 @@ int dequeue(){
 }
 
 int main(){
+	setlocale(LC_ALL, "Turkish"); 
     printf("1 - Veri Ekleme\n2 - Veri Çýkarma\n0 - Çýkýþ\n");
     int islem, veri;
     while(1){
